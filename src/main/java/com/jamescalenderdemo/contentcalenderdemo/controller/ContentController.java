@@ -45,7 +45,7 @@ public class ContentController{
         return repository.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}")  // returning Content instead of Optional<Content> because the orElseThrow is getting rid of the possible null value
     public Content findById(@PathVariable Integer id){
         return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found!"));
     }
