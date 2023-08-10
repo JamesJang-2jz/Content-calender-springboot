@@ -7,12 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class ContentCalenderDemoApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		// ConfigurableApplicationContext context = SpringApplication.run(ContentCalenderDemoApplication.class, args);
+		// ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		// Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-		SpringApplication.run(ContentCalenderDemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
+ 

@@ -23,11 +23,12 @@ import org.springframework.web.service.annotation.DeleteExchange;
 import com.jamescalenderdemo.contentcalenderdemo.model.Content;
 import com.jamescalenderdemo.contentcalenderdemo.repository.ContentCollectionRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping ("/api/content")
 @CrossOrigin
-public class ContentController {
-    
+public class ContentController{
     private ContentCollectionRepository repository;
 
     public ContentController(ContentCollectionRepository contentCollectionRepository){
@@ -48,7 +49,7 @@ public class ContentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void create(@RequestBody Content content){
+    public void create(@Valid @RequestBody Content content){ // @NotEmpty needs to work with @Valid. this content needs to be valid or it won't even go into method body 
         repository.save(content);
     }
 

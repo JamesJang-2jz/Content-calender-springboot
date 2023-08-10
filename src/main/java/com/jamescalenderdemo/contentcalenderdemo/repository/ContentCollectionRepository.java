@@ -15,6 +15,7 @@ import jakarta.annotation.PostConstruct;
 
 @Repository
 public class ContentCollectionRepository {
+    
     private final List<Content> contentList = new ArrayList<>();
     
     public ContentCollectionRepository (){
