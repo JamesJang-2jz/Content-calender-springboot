@@ -15,7 +15,7 @@ import jakarta.annotation.PostConstruct;
 
 @Repository
 public class ContentCollectionRepository {
-    
+
     private final List<Content> contentList = new ArrayList<>();
     
     public ContentCollectionRepository (){
@@ -33,7 +33,7 @@ public class ContentCollectionRepository {
         contentList.add(content);
     }
 
-    @PostConstruct
+    @PostConstruct // used on method that needs to be executed after dependency injection is done to perform any initialization
     private void init(){
         Content c = new Content(1,
                 "My first blog post",

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.apache.catalina.startup.ClassLoaderFactory.Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,8 +30,10 @@ import jakarta.validation.Valid;
 @RequestMapping ("/api/content")
 @CrossOrigin
 public class ContentController{
-    private ContentCollectionRepository repository;
 
+    private final ContentCollectionRepository repository;
+
+    @Autowired // this is something i want injected. when theres only one public constructor, autowired is implicit and dont really need it
     public ContentController(ContentCollectionRepository contentCollectionRepository){
         this.repository = contentCollectionRepository;
     }
