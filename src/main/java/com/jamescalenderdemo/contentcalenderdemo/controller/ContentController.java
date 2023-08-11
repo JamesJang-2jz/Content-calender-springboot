@@ -56,7 +56,7 @@ public class ContentController{
         repository.save(content);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) // sends different status code to say it worked but no content returned
     @PutMapping("/{id}")
     public void update(@RequestBody Content content,@PathVariable Integer id){
         if (!repository.existsById(id)) {
