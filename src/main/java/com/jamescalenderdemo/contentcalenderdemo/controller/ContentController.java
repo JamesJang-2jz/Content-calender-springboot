@@ -71,4 +71,9 @@ public class ContentController{
     public void delete(@PathVariable Integer id){
         repository.deleteById(id);
     }
+
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword){
+        return repository.findAllByTitleContains(keyword);
+    }
 }

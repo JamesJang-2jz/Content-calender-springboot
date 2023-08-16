@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 
+@Table
 public record Content(
 
     @Id
