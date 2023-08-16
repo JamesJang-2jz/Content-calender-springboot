@@ -10,6 +10,9 @@ import com.jamescalenderdemo.contentcalenderdemo.model.Content;
 import com.jamescalenderdemo.contentcalenderdemo.model.Status;
 
 // @Repository
+
+// Spring Data jdbc uses CrudRepository and simple "entity". creates queries for you without having to write native Crud queries over jdbc.
+
 public interface ContentRepository extends ListCrudRepository<Content, Integer>{
     
 

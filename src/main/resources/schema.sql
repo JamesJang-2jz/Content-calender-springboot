@@ -10,5 +10,8 @@ CREATE TABLE IF NOT EXISTS Content (
     primary key (id)
 );
 
-INSERT INTO Content (title,desc,status,content_type,date_created)
-VALUES ('my first spring data blog post','A post about spring data','IDEA','ARTICLE',CURRENT_TIMESTAMP());
+-- INSERT INTO Content (title,desc,status,content_type,date_created)
+-- VALUES ('my first spring data blog post','A post about spring data','IDEA','ARTICLE',CURRENT_TIMESTAMP());
+
+-- INSERT INTO Content (title,desc,status,content_type,date_created)
+-- VALUES ('this is second post','testing 2nd post','PUBLISHED','VIDEO',CURRENT_TIMESTAMP());
