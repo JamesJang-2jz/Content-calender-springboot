@@ -22,6 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.service.annotation.DeleteExchange;
 
 import com.jamescalenderdemo.contentcalenderdemo.model.Content;
+import com.jamescalenderdemo.contentcalenderdemo.model.Status;
 import com.jamescalenderdemo.contentcalenderdemo.repository.ContentCollectionRepository;
 import com.jamescalenderdemo.contentcalenderdemo.repository.ContentRepository;
 
@@ -76,4 +77,10 @@ public class ContentController{
     public List<Content> findByTitle(@PathVariable String keyword){
         return repository.findAllByTitleContains(keyword);
     }
+
+    @GetMapping("/filter/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status){
+        return repository.listByStatus(status);
+    }
+
 }

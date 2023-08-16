@@ -23,7 +23,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
+	@Bean // if you want to create instance of class using method use @bean
 	CommandLineRunner commandLineRunner(ContentRepository repository){
 		return args -> {
 			   Content c = new Content( null,

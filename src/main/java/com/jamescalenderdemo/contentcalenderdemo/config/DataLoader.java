@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 
 
 // @Component
+// COMMAND LINE RUNNER IS FUNCTIONAL INTERFACE, CAN BE USED WITH LAMBDA
 public class DataLoader implements CommandLineRunner {
 
     @Override
