@@ -2,7 +2,7 @@
 GET http://localhost:8080/api/content
 
 ### Get Content by ID
-GET http://localhost:8080/api/content/2
+GET http://localhost:8080/api/content/1
 
 ### Create new Content
 POST http://localhost:8080/api/content HTTP/1.1

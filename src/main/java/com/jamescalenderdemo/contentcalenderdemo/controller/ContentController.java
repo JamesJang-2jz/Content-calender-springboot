@@ -23,6 +23,7 @@ import org.springframework.web.service.annotation.DeleteExchange;
 
 import com.jamescalenderdemo.contentcalenderdemo.model.Content;
 import com.jamescalenderdemo.contentcalenderdemo.repository.ContentCollectionRepository;
+import com.jamescalenderdemo.contentcalenderdemo.repository.ContentRepository;
 
 import jakarta.validation.Valid;
 
@@ -31,11 +32,11 @@ import jakarta.validation.Valid;
 @CrossOrigin
 public class ContentController{
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
 
     @Autowired // this is something i want injected. when theres only one public constructor, autowired is implicit and dont really need it
-    public ContentController(ContentCollectionRepository contentCollectionRepository){
-        this.repository = contentCollectionRepository;
+    public ContentController(ContentRepository repository){
+        this.repository = repository;
     }
 
 
@@ -68,6 +69,6 @@ public class ContentController{
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id){
-        repository.delete(id);
+        repository.deleteById(id);
     }
 }
